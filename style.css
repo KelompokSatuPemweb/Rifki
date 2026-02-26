@@ -1,0 +1,129 @@
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    min-height: 100vh;
+    color: #333;
+}
+
+.main-header {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.main-header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.main-nav button {
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    color: #4e73df;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-nav button:hover {
+    background-color: #f8f9fc;
+}
+
+.content-section {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #4e73df;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2e59d9;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+thead {
+    background-color: #4e73df;
+    color: white;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f8f9fc;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+}

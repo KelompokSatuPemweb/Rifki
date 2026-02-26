@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistem Informasi Akademik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+    <div class="main-header">
+    <header>
+        <h1>Sistem Informasi Akademik</h1>
+        <p>Fitur Absensi dan Jadwal Pelajaran</p>
+    </header>
+    </div>
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="main-nav">
+        <button onclick="showSection('absensiSection')">Absensi</button>
+        <button onclick="showSection('jadwalSection')">Jadwal Pelajaran</button>
+    </nav>
+
+    <!-- ================= ABSENSI SECTION ================= -->
+    <section id="absensiSection" class="content-section">
+
+        <h2>Form Input Absensi</h2>
+
+        <div class="card">
+            <form id="formAbsensi">
+
+                <div class="form-group">
+                    <label>Nama Siswa</label>
+                    <input type="text" id="namaSiswa" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Kelas</label>
+                    <input type="text" id="kelasSiswa" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tanggal</label>
+                    <input type="date" id="tanggalAbsensi" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Status Kehadiran</label>
+                    <select id="statusAbsensi" required>
+                        <option value="">-- Pilih Status --</option>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Izin">Izin</option>
+                        <option value="Sakit">Sakit</option>
+                        <option value="Alpa">Alpa</option>
+                    </select>
+                </div>
+
+                <button type="submit">Simpan Absensi</button>
+
+            </form>
+        </div>
+
+        <h2>Data Absensi</h2>
+
+        <div class="table-container">
+            <table id="tabelAbsensi">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Kelas</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data Absensi Ditampilkan di Sini -->
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- ================= JADWAL SECTION ================= -->
+    <section id="jadwalSection" class="content-section hidden">
+
+        <h2>Form Input Jadwal Pelajaran</h2>
+
+        <div class="card">
+            <form id="formJadwal">
+
+                <div class="form-group">
+                    <label>Mata Pelajaran</label>
+                    <input type="text" id="mapel" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Guru Pengampu</label>
+                    <input type="text" id="guru" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Hari</label>
+                    <select id="hari" required>
+                        <option value="">-- Pilih Hari --</option>
+                        <option>Senin</option>
+                        <option>Selasa</option>
+                        <option>Rabu</option>
+                        <option>Kamis</option>
+                        <option>Jumat</option>
+                        <option>Sabtu</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Jam</label>
+                    <input type="time" id="jamMulai" required>
+                </div>
+
+                <button type="submit">Simpan Jadwal</button>
+
+            </form>
+        </div>
+
+        <h2>Data Jadwal Pelajaran</h2>
+
+        <div class="table-container">
+            <table id="tabelJadwal">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Guru</th>
+                        <th>Hari</th>
+                        <th>Jam</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data Jadwal Ditampilkan di Sini -->
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+</div>
+    <!-- ================= FOOTER ================= -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Sistem Informasi Akademik</p>
+        <p>Project Pemrograman Mobile dan Web</p>
+    </footer>
+
+    <!-- External JS -->
+    <script src="main.js"></script>
+
+</body>
+</html>
