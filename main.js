@@ -115,3 +115,14 @@ document.addEventListener("DOMContentLoaded", function () {
     renderAbsensi();
     renderJadwal();
 });
+
+// Vanilla JS Local Storage Validation
+function safeSave(key, data) {
+  if (typeof data !== 'object' || data === null) return false;
+  const json = JSON.stringify(data);
+  if (json.length > 5000000) return false; // cek quota
+  try {
+    localStorage.setItem(key, json);
+    return true;
+  } catch (e) { return false; }
+}
