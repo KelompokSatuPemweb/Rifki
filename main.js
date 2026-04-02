@@ -126,3 +126,11 @@ function safeSave(key, data) {
     return true;
   } catch (e) { return false; }
 }
+
+const formLogin = document.getElementById('loginForm');
+    // Secara otomatis, tombol tipe submit akan bereaksi terhadap 'Enter'
+    formLogin.addEventListener('submit', function(event) {
+        event.preventDefault();
+        console.log('Form berhasil disubmit dengan Enter!');
+        // Lakukan validasi atau aksi lainnya di sini
+    });
