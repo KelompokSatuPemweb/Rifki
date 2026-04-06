@@ -37,66 +37,71 @@
     <nav class="main-nav">
         <button onclick="showSection('absensiSection')">Absensi</button>
         <button onclick="showSection('jadwalSection')">Jadwal Pelajaran</button>
+        <button id="logoutBtn" class="logout-button">Logout</button>
     </nav>
         
-    <section id="absensiSection" class="content-section">
-        <h2>Form Input Absensi</h2>
+    <section id="absensiSection" class="content-section hidden">
+    <h2>Form Input Absensi</h2>
 
-        <div class="card">
-            <form id="formAbsensi">
+    <div class="card">
+        <form id="formAbsensi">
+            <div class="form-group">
+                <label>Nama Siswa</label>
+                <input type="text" id="namaSiswa" placeholder="Masukkan nama siswa" required>
+            </div>
+            <div class="form-group">
+                <label>Kelas</label>
+                <input type="text" id="kelasSiswa" placeholder="Masukkan kelas siswa" required>
+            </div>
+            <div class="form-group">
+                <label>Tanggal</label>
+                <input type="date" id="tanggalAbsensi" required>
+            </div>
+            <div class="form-group">
+                <label>Status Kehadiran</label>
+                <select id="statusAbsensi" required>
+                    <option value="">-- Pilih Status --</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Izin">Izin</option>
+                    <option value="Sakit">Sakit</option>
+                    <option value="Alpa">Alpa</option>
+                </select>
+            </div>
+            <button type="submit">Simpan Absensi</button>
+        </form>
+    </div>
 
-                <div class="form-group">
-                    <label>Nama Siswa</label>
-                    <input type="text" id="namaSiswa" placeholder="Masukkan nama siswa anda">
-                </div>
-
-                <div class="form-group">
-                    <label>Kelas</label>
-                    <input type="text" id="kelasSiswa" placeholder="Masukkan kelas siswa anda">
-                </div>
-
-                <div class="form-group">
-                    <label>Tanggal</label>
-                    <input type="date" id="tanggalAbsensi" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Status Kehadiran</label>
-                    <select id="statusAbsensi" required>
-                        <option value="">-- Pilih Status --</option>
-                        <option value="Hadir">Hadir</option>
-                        <option value="Izin">Izin</option>
-                        <option value="Sakit">Sakit</option>
-                        <option value="Alpa">Alpa</option>
-                    </select>
-                </div>
-
-                <button type="submit">Simpan Absensi</button>
-
-            </form>
+    <!-- REKAP ABSENSI BERDASARKAN STATUS -->
+    <h2>Rekap Absensi Hari Ini</h2>
+    <div class="rekap-container">
+        <div class="rekap-card hadir">
+            <h3>✅ Hadir</h3>
+            <ul id="listHadir"></ul>
         </div>
-
-        <h2>Data Absensi</h2>
-
-        <div class="table-container">
-            <table id="tabelAbsensi">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Kelas</th>
-                        <th>Tanggal</th>
-                        <th>Status</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Data Absensi Ditampilkan di Sini -->
-                </tbody>
-            </table>
+        <div class="rekap-card izin">
+            <h3>📝 Izin</h3>
+            <ul id="listIzin"></ul>
         </div>
+        <div class="rekap-card sakit">
+            <h3>🤒 Sakit</h3>
+            <ul id="listSakit"></ul>
+        </div>
+        <div class="rekap-card alpa">
+            <h3>⚠️ Alpa</h3>
+            <ul id="listAlpa"></ul>
+        </div>
+    </div>
 
-    </section>
+    <h2>Semua Data Absensi</h2>
+    <div class="table-container">
+        <table id="tabelAbsensi">
+            <thead>
+                <tr><th>No</th><th>Nama</th><th>Kelas</th><th>Tanggal</th><th>Status</th><th>Aksi</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
 
     <section id="jadwalSection" class="content-section hidden">
         <h2>Form Input Jadwal Pelajaran</h2>
