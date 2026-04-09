@@ -248,3 +248,34 @@ document.addEventListener('DOMContentLoaded', function() {
         loadJadwalFromLocal();
     }
 });
+
+function analyzeDOMDepth(node, currentLevel = 1, maxLevel = 4) {
+  if (currentLevel > maxLevel) return null;
+
+  let result = {
+    tag: node.tagName ? node.tagName.toLowerCase() : 'text',
+    level: currentLevel,
+    children: []
+  };
+
+  // Batasi hanya elemen (nodeType 1) dan hindari teks agar tidak terlalu detail
+  for (let child of node.children) {
+    const childResult = analyzeDOMDepth(child, currentLevel + 1, maxLevel);
+    if (childResult) result.children.push(childResult);
+  }
+  return result;
+}
+
+// Jalankan analisis dari <body>
+const domTree = analyzeDOMDepth(document.body);
+console.log('Struktur DOM hingga level 4:', JSON.stringify(domTree, null, 2));
+
+// Opsional: tampilkan ringkasan per level
+function logLevelSummary(node, level = 1) {
+  if (level > 4) return;
+  console.log(`Level ${level}:`, node.tagName ? node.tagName.toLowerCase() : 'text');
+  for (let child of node.children) {
+    logLevelSummary(child, level + 1);
+  }
+}
+logLevelSummary(document.body);
