@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistem Informasi Akademik</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <div class="container">
-        <section id="loginSection" class="content-section">
+        <section id="loginSection" 
+        class="content-section">
             <h2>Login Aplikasi absensi dan Jadwal Pelajaran</h2>
-        </section>
+        
         <div class="login-Form">
             <form id="loginForm">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" required>
+                    <input type="text" 
+                    id="username" 
+                    placeholder="Masukkan username" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" required>
+                    <input type="password" 
+                    id="password"
+                    placeholder="Masukkan password" required>
                 </div>
                 <button type="submit">Login</button>
             </form>
         </div>
+        </section>
     <div class="main-header">
     <header>
         <h1>Sistem Informasi Akademik</h1>
@@ -37,25 +43,33 @@
     <nav class="main-nav">
         <button onclick="showSection('absensiSection')">Absensi</button>
         <button onclick="showSection('jadwalSection')">Jadwal Pelajaran</button>
-        <button id="logoutBtn" class="logout-button">Logout</button>
+        <button id="logoutBtn" 
+        class="logout-button">Logout</button>
     </nav>
         
-    <section id="absensiSection" class="content-section hidden">
+    <section id="absensiSection" 
+    class="content-section hidden">
     <h2>Form Input Absensi</h2>
 
     <div class="card">
         <form id="formAbsensi">
             <div class="form-group">
                 <label>Nama Siswa</label>
-                <input type="text" id="namaSiswa" placeholder="Masukkan nama siswa" required>
+                <input type="text" 
+                id="namaSiswa" 
+                placeholder="Masukkan nama siswa" required>
             </div>
             <div class="form-group">
                 <label>Kelas</label>
-                <input type="text" id="kelasSiswa" placeholder="Masukkan kelas siswa" required>
+                <input type="text" 
+                id="kelasSiswa" 
+                placeholder="Masukkan kelas siswa" required>
             </div>
             <div class="form-group">
                 <label>Tanggal</label>
-                <input type="date" id="tanggalAbsensi" required>
+                <input type="date" 
+                id="tanggalAbsensi" 
+                placeholder="Masukkan tanggal" required>
             </div>
             <div class="form-group">
                 <label>Status Kehadiran</label>
@@ -71,23 +85,22 @@
         </form>
     </div>
 
-    <!-- REKAP ABSENSI BERDASARKAN STATUS -->
     <h2>Rekap Absensi Hari Ini</h2>
     <div class="rekap-container">
         <div class="rekap-card hadir">
-            <h3>✅ Hadir</h3>
+            <h3>Hadir</h3>
             <ul id="listHadir"></ul>
         </div>
         <div class="rekap-card izin">
-            <h3>📝 Izin</h3>
+            <h3>Izin</h3>
             <ul id="listIzin"></ul>
         </div>
         <div class="rekap-card sakit">
-            <h3>🤒 Sakit</h3>
+            <h3>Sakit</h3>
             <ul id="listSakit"></ul>
         </div>
         <div class="rekap-card alpa">
-            <h3>⚠️ Alpa</h3>
+            <h3>Alpa</h3>
             <ul id="listAlpa"></ul>
         </div>
     </div>
@@ -111,12 +124,18 @@
 
                 <div class="form-group">
                     <label>Mata Pelajaran</label>
-                    <input type="text" id="mapel" required>
+                    <input type="text" 
+                    id="mapel"
+                    placeholder="Masukkan mata pelajaran" 
+                    required>
                 </div>
 
                 <div class="form-group">
                     <label>Guru Pengampu</label>
-                    <input type="text" id="guru" required>
+                    <input type="text" 
+                    id="guru" 
+                    placeholder="Masukkan nama guru" 
+                    required>
                 </div>
 
                 <div class="form-group">
@@ -134,7 +153,9 @@
 
                 <div class="form-group">
                     <label>Jam</label>
-                    <input type="time" id="jamMulai" required>
+                    <input type="time" 
+                    id="jamMulai" 
+                    placeholder="Masukkan jam mulai" required>
                 </div>
 
                 <button type="submit">Simpan Jadwal</button>
@@ -168,7 +189,6 @@
         <p>Project Pemrograman Mobile dan Web</p>
     </footer>
 
-    <!-- External JS -->
     <script src="main.js"></script>
 
 </body>
